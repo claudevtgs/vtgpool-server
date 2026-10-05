@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d8ab37d2a8f4d47a40833d03910c04, type: 3}
+  m_Name: BallPhysicsProfile
+  m_EditorClassIdentifier: VTG.Pool::VTG.Pool.Simulation.BallPhysicsProfile
+  ballMass: 0.17
+  ballRadius: 0.028575
+  ballRestitution: 0.93
+  ballBallFriction: 0.06
+  slidingFriction: 0.2
+  rollingResistance: 0.012
+  spinFriction: 0.012
+  cushionRestitution: 0.85
+  cushionRestitutionSpeedLoss: 0.025
+  cushionMinRestitution: 0.6
+  cushionTangentialFriction: 0.2
+  minimumLinearVelocity: 0.005
+  minimumAngularVelocity: 0.2
+  slipSpeedEpsilon: 0.002
+  sleepThreshold: 0.0001
+  maxAngularVelocity: 1500
+  contactOffset: 0.001
+  solverIterations: 10
+  solverVelocityIterations: 4
+  bounceThreshold: 0.02
+  clothContactTolerance: 0.004
+  ballMaterial: {fileID: 13400000, guid: 43d99ee18f0dbfa43ac2bd2e89b56f1b, type: 2}

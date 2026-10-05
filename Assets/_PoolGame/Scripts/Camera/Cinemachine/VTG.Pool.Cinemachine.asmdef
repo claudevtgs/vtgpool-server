@@ -1,0 +1,25 @@
+{
+    "name": "VTG.Pool.Cinemachine",
+    "rootNamespace": "VTG.Pool.CameraSystem",
+    "references": [
+        "VTG.Pool",
+        "Unity.Cinemachine"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "VTG_POOL_CINEMACHINE"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.cinemachine",
+            "expression": "3.0.0",
+            "define": "VTG_POOL_CINEMACHINE"
+        }
+    ],
+    "noEngineReferences": false
+}

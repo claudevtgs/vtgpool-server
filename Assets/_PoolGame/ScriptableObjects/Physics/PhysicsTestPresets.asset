@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b098f96168e34744871e592080e3540, type: 3}
+  m_Name: PhysicsTestPresets
+  m_EditorClassIdentifier: VTG.Pool::VTG.Pool.Simulation.Testing.PhysicsTestPresetLibrary
+  presets:
+  - name: Straight Shot
+    cueBall: {x: 0, y: -0.635}
+    rack: 0
+    objectBalls:
+    - ballId: 1
+      position: {x: 0, y: 0.2}
+    aimMode: 2
+    aimAngle: 0
+    aimPoint: {x: 0, y: 0}
+    aimBallId: 1
+    cutFraction: 0
+    power: 0.35
+    tipOffset: {x: 0, y: 0}
+    autoShoot: 1
+    expectation: Full hit. Cue ball has started rolling, so it follows slowly after contact.
+  - name: Stop Shot
+    cueBall: {x: 0.104, y: 0.585}
+    rack: 0
+    objectBalls:
+    - ballId: 1
+      position: {x: 0.35, y: 0.9}
+    aimMode: 2
+    aimAngle: 0
+    aimPoint: {x: 0, y: 0}
+    aimBallId: 1
+    cutFraction: 0
+    power: 0.45
+    tipOffset: {x: 0, y: -0.25}
+    autoShoot: 1
+    expectation: 'Straight-in shot to the corner: backspin wears off at contact, cue ball stops on the spot, object ball drops.'
+  - name: Follow Shot
+    cueBall: {x: 0, y: -0.55}
+    rack: 0
+    objectBalls:
+    - ballId: 1
+      position: {x: 0, y: 0.2}
+    aimMode: 2
+    aimAngle: 0
+    aimPoint: {x: 0, y: 0}
+    aimBallId: 1
+    cutFraction: 0
+    power: 0.4
+    tipOffset: {x: 0, y: 0.8}
+    autoShoot: 1
+    expectation: 'Topspin: cue ball pauses at contact, then accelerates forward after the object ball.'
+  - name: Draw Shot
+    cueBall: {x: 0, y: -0.35}
+    rack: 0
+    objectBalls:
+    - ballId: 1
+      position: {x: 0, y: 0.1}
+    aimMode: 2
+    aimAngle: 0
+    aimPoint: {x: 0, y: 0}
+    aimBallId: 1
+    cutFraction: 0
+    power: 0.5
+    tipOffset: {x: 0, y: -0.9}
+    autoShoot: 1
+    expectation: 'Backspin survives to contact: cue ball stops then draws back toward the shooter.'
+  - name: Left English
+    cueBall: {x: 0.2, y: -0.6}
+    rack: 0
+    objectBalls: []
+    aimMode: 1
+    aimAngle: 0
+    aimPoint: {x: 0.635, y: -0.3}
+    aimBallId: 1
+    cutFraction: 0
+    power: 0.4
+    tipOffset: {x: -0.8, y: 0}
+    autoShoot: 1
+    expectation: 'Running english: the ball rebounds left off the right rail, so left english widens the rebound (compare with Rail Bounce).'
+  - name: Right English
+    cueBall: {x: 0.2, y: -0.6}
+    rack: 0
+    objectBalls: []
+    aimMode: 1
+    aimAngle: 0
+    aimPoint: {x: 0.635, y: -0.3}
+    aimBallId: 1
+    cutFraction: 0
+    power: 0.4
+    tipOffset: {x: 0.8, y: 0}
+    autoShoot: 1
+    expectation: 'Reverse english: right english narrows the rebound off the right rail (compare with Rail Bounce).'
+  - name: Rail Bounce
+    cueBall: {x: 0.2, y: -0.6}
+    rack: 0
+    objectBalls: []
+    aimMode: 1
+    aimAngle: 0
+    aimPoint: {x: 0.635, y: -0.3}
+    aimBallId: 1
+    cutFraction: 0
+    power: 0.4
+    tipOffset: {x: 0, y: 0}
+    autoShoot: 1
+    expectation: 'Centre ball bank: rebound slightly steeper than mirror reflection (cushion friction).'
+  - name: Ball Collision
+    cueBall: {x: -0.25, y: -0.4}
+    rack: 0
+    objectBalls:
+    - ballId: 3
+      position: {x: 0, y: 0.3}
+    aimMode: 2
+    aimAngle: 0
+    aimPoint: {x: 0, y: 0}
+    aimBallId: 3
+    cutFraction: 0.5
+    power: 0.4
+    tipOffset: {x: 0, y: 0}
+    autoShoot: 1
+    expectation: Half-ball hit (30 deg cut). Stunned cue ball leaves ~90 deg to the object ball, then bends forward.
+  - name: Break Shot
+    cueBall: {x: 0.15, y: -0.635}
+    rack: 1
+    objectBalls: []
+    aimMode: 2
+    aimAngle: 0
+    aimPoint: {x: 0, y: 0}
+    aimBallId: 1
+    cutFraction: 0
+    power: 1
+    tipOffset: {x: 0, y: -0.15}
+    autoShoot: 1
+    expectation: 'Full-power break: no tunnelling, no rack overlap, balls settle in finite time.'
+  - name: Pocket Jaw Test
+    cueBall: {x: 0.2, y: 0.45}
+    rack: 0
+    objectBalls:
+    - ballId: 1
+      position: {x: 0.45, y: 0.95}
+    aimMode: 3
+    aimAngle: 0
+    aimPoint: {x: 0.62, y: 1.27}
+    aimBallId: 1
+    cutFraction: 0
+    power: 0.45
+    tipOffset: {x: 0, y: 0}
+    autoShoot: 1
+    expectation: 'Object ball is sent at the corner pocket slightly off-centre: it contacts the jaw and drops (or rattles).'

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db0519af4c1f074a8ea3bab49e6c121, type: 3}
+  m_Name: AudioLibrary
+  m_EditorClassIdentifier: VTG.Pool::VTG.Pool.Audio.AudioLibrary
+  ballClicks:
+  - {fileID: 8300000, guid: 4090d33871dba584caa220b02014e01a, type: 3}
+  - {fileID: 8300000, guid: 4ff651f5594ffe24a9a9f433c30a3f28, type: 3}
+  - {fileID: 8300000, guid: ca0857d60738d57409b4d71e4061fe12, type: 3}
+  breakClatter: {fileID: 8300000, guid: 45c762bf67435df4daee215ec843b632, type: 3}
+  rollLoop: {fileID: 8300000, guid: d3c5f57a99c0750458da3de0f19241de, type: 3}
+  cushionHits:
+  - {fileID: 8300000, guid: e2fa4cf9174779d4dbd48868c7cd0555, type: 3}
+  - {fileID: 8300000, guid: e449219a6b3b470479aeefb8844f8e1c, type: 3}
+  pocketDrops:
+  - {fileID: 8300000, guid: 659b515e2a1b3454cb9a1556922e6172, type: 3}
+  - {fileID: 8300000, guid: 5c9166e50c35d8e4497af1c693edd323, type: 3}
+  cueStrikeSoft: {fileID: 8300000, guid: ef515fad1846fc64c8b9d574e7b5ba56, type: 3}
+  cueStrikeHard: {fileID: 8300000, guid: d264f0359a5bbd54e8264a995f40c897, type: 3}
+  chalk: {fileID: 8300000, guid: c8930ad6afa5f27409fb836da37cace3, type: 3}
+  uiClick: {fileID: 8300000, guid: 100cd4259b26ca0418360f4b48126a0e, type: 3}
+  foul: {fileID: 8300000, guid: 0ed9be8f644193449ae6f922d8935bec, type: 3}
+  win: {fileID: 8300000, guid: b35ede885a7761744a5bfbaae08df3ab, type: 3}
+  callout: {fileID: 8300000, guid: 9951944579c4ae448ace141e4077c005, type: 3}
+  ambience: {fileID: 8300000, guid: 1ec9cc36d70bcb54d89024a7fd98c786, type: 3}
+  music: {fileID: 8300000, guid: 395e3204bc8b3a246a916e472212c1ea, type: 3}
+  masterVolume: 1
+  effectsVolume: 0.9
+  ambienceVolume: 0.25
+  musicVolume: 0.18
+  fullVolumeImpactSpeed: 4
+  pitchVariation: 0.06

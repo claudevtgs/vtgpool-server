@@ -1,0 +1,9 @@
+﻿<Solution>
+  <Project Path="VTG.Pool.csproj" />
+  <Project Path="VTG.Pool.Editor.csproj" />
+  <Project Path="VTG.Pool.Tests.PlayMode.csproj" />
+  <Project Path="VTG.Pool.Tests.EditMode.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="VTG.Pool.Cinemachine.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+</Solution>

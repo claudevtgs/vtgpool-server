@@ -1,0 +1,7 @@
+Inter font — Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+The license is available with a FAQ at: https://openfontlicense.org (http://scripts.sil.org/OFL)
+
+Used in VTG Pool 3D for all UI text (full Vietnamese coverage on every platform, including WebGL).
+Copied unmodified from the Unity App UI package (com.unity.dt.app-ui), which ships it under the same license.

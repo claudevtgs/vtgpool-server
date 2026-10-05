@@ -1,0 +1,17 @@
+# systemd unit for the VTG Pool room server.
+# sudo cp vtgpool-server.service /etc/systemd/system/ && sudo systemctl daemon-reload && sudo systemctl enable --now vtgpool-server
+[Unit]
+Description=VTG Pool 3D room server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/vtgpool-server
+ExecStart=/usr/bin/node /opt/vtgpool-server/server.js --port 8765 --host 127.0.0.1
+Restart=always
+RestartSec=3
+User=www-data
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target

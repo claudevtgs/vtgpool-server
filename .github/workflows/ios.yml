@@ -1,0 +1,90 @@
+# iOS build without a Mac:
+#   1. Linux runner: GameCI exports the Xcode project (Unity 6000.6.4f1 iOS image).
+#   2. macOS runner: xcodebuild archives it unsigned and packs VTGPool3D-unsigned.ipa.
+# Install the .ipa with Sideloadly / AltStore (signed with your own Apple ID at install time).
+# Secrets (Settings > Secrets and variables > Actions): UNITY_LICENSE (contents of Unity_lic.ulf), UNITY_EMAIL, UNITY_PASSWORD.
+name: iOS build
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+jobs:
+  export:
+    name: Export Xcode project
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-iOS-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: Library-iOS-
+
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: iOS
+          buildName: VTGPool3D
+          buildMethod: VTG.Pool.EditorTools.IosBuild.BuildForCi
+
+      # tar keeps the executable bits of Unity's Xcode build scripts (upload-artifact drops them).
+      - name: Pack Xcode project
+        run: sudo tar -czf xcode-project.tgz -C build/iOS VTGPool3D
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xcode-project
+          path: xcode-project.tgz
+          retention-days: 3
+
+  ipa:
+    name: Archive unsigned .ipa
+    needs: export
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: xcode-project
+
+      - name: Unpack
+        run: tar -xzf xcode-project.tgz
+
+      - name: Archive (no signing)
+        working-directory: VTGPool3D
+        run: |
+          if [ -f Podfile ]; then pod install; fi
+          if [ -d Unity-iPhone.xcworkspace ]; then SRC="-workspace Unity-iPhone.xcworkspace"; else SRC="-project Unity-iPhone.xcodeproj"; fi
+          xcodebuild $SRC -scheme Unity-iPhone -configuration Release \
+            -sdk iphoneos -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/VTGPool3D.xcarchive" archive \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" | tail -n 200
+          test -d "$RUNNER_TEMP/VTGPool3D.xcarchive/Products/Applications"
+
+      - name: Pack .ipa
+        run: |
+          mkdir -p Payload
+          cp -R "$RUNNER_TEMP"/VTGPool3D.xcarchive/Products/Applications/*.app Payload/
+          zip -qry VTGPool3D-unsigned.ipa Payload
+          ls -lh VTGPool3D-unsigned.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VTGPool3D-unsigned-ipa
+          path: VTGPool3D-unsigned.ipa
+          retention-days: 14

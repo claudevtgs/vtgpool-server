@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16939d35a6cb0b449e4d1dc6db24b6e, type: 3}
+  m_Name: EightBallRules
+  m_EditorClassIdentifier: VTG.Pool::VTG.Pool.Rules.EightBall.EightBallRulesConfig
+  minBallsToRailOnBreak: 4
+  rerackOnIllegalBreak: 1
+  eightOnBreak: 0
+  breakScratchBehindHeadString: 1
+  assignGroupsOnBreak: 0
+  openTableEightFirstIsFoul: 1
+  requireRailAfterContact: 1
+  anyFoulOnEightLoses: 1

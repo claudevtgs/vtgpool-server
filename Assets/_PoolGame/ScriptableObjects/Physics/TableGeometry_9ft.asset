@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f1d645be76e84db54a33ae8ec56be, type: 3}
+  m_Name: TableGeometry_9ft
+  m_EditorClassIdentifier: VTG.Pool::VTG.Pool.Table.TableGeometry
+  playLength: 2.54
+  playWidth: 1.27
+  surfaceHeight: 0.76
+  bedThickness: 0.04
+  cushionDepth: 0.05
+  cushionColliderHeight: 0.048
+  cushionNoseHeight: 0.0365
+  railWidth: 0.13
+  railHeight: 0.056
+  cornerMouth: 0.116
+  cornerJawAngle: 142
+  cornerHoleRadius: 0.068
+  cornerHoleOffset: 0.02
+  sideMouth: 0.13
+  sideJawAngle: 104
+  sideHoleRadius: 0.065
+  sideHoleOffset: 0.045
+  linerDepth: 0.2
+  linerThickness: 0.012
+  linerTopDrop: 0.015
+  jawRestitutionScale: 0.8
+  jawFrictionScale: 1.2
+  pocketBackRestitutionScale: 0.2
+  pocketBackFrictionScale: 1.5
+  clothPhysicsMaterial: {fileID: 13400000, guid: af7917710b19f704bb2c1aaee5feab26, type: 2}
+  cushionPhysicsMaterial: {fileID: 13400000, guid: 1cba1642d4b628941bf81b9bbc507f95, type: 2}
+  clothMaterial: {fileID: 2100000, guid: e4920a0b3cc122d45a79baf5ade57510, type: 2}
+  cushionMaterial: {fileID: 2100000, guid: e4920a0b3cc122d45a79baf5ade57510, type: 2}
+  railMaterial: {fileID: 2100000, guid: 18ba2cf50509d324a84b0b83ea0ade0f, type: 2}
+  pocketMaterial: {fileID: 2100000, guid: b34ea0b8b9b0aff45b01113ebd1b9705, type: 2}

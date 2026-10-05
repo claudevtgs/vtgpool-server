@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "webgl-local",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["Server/server.js", "--port", "8790", "--static", "Builds/WebGL"],
+      "port": 8790
+    }
+  ]
+}
